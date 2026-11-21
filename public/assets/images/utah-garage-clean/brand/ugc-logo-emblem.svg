@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Utah Garage Clean UGC Official Logo">
+  <rect width="200" height="200" fill="#0B1726" />
+  <!-- Gabled roof -->
+  <polygon points="100,26 42,46 42,53 100,34 158,53 158,46" fill="#F56600" />
+  <!-- Outer garage frame -->
+  <path d="M46,56 L100,38 L154,56 L154,126 L46,126 Z M53,61 L53,120 L147,120 L147,61 L100,45 Z" fill="#F56600" />
+  <!-- Inner garage door frame -->
+  <rect x="57" y="61" width="86" height="56" fill="none" stroke="#F56600" stroke-width="4" />
+  <!-- 4 garage door panels (2x2 with beveled inner edges matching original logo) -->
+  <!-- Top-left panel -->
+  <polygon points="62,66 97,66 97,87 62,89" fill="#F56600" />
+  <!-- Top-right panel -->
+  <polygon points="103,66 138,66 138,89 103,87" fill="#F56600" />
+  <!-- Bottom-left panel -->
+  <polygon points="62,93 97,91 97,113 62,113" fill="#F56600" />
+  <!-- Bottom-right panel with handle cutout -->
+  <path d="M103,91 L138,93 L138,113 L103,113 Z M118,103 L132,103 L132,108 L118,108 Z" fill="#F56600" fill-rule="evenodd" />
+  <!-- Bold UGC lettering -->
+  <text
+    x="100"
+    y="174"
+    text-anchor="middle"
+    font-family="Manrope, Inter, Arial Black, sans-serif"
+    font-weight="800"
+    font-size="45"
+    letter-spacing="2"
+    fill="#F56600"
+  >UGC</text>
+</svg>

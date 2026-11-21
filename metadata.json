@@ -1,0 +1,6 @@
+{
+  "name": "Utah Garage Clean",
+  "description": "Garage cleaning and organization serving South Jordan and Salt Lake County, Utah. DM 'GARAGE' on Instagram for a free quote.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+:root {
+  --color-navy: #193747;
+  --color-navy-deep: #0b1726;
+  --color-teal: #159a98;
+  --color-orange: #f56600;
+  --color-lime: #b8d957;
+  --color-blue: #5b9bb5;
+  --color-sand: #d9c6a2;
+  --color-white: #ffffff;
+  --color-concrete: #eef1ef;
+  --color-ivory: #f8f8f3;
+  --color-mint: #e8f2ec;
+  --color-slate: #28363d;
+  --color-graphite: #414b50;
+
+  --font-heading: "Manrope", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: var(--color-slate);
+    background-color: var(--color-ivory);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    color: var(--color-slate);
+    background-color: var(--color-ivory);
+    line-height: 1.65;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* =========================================================
+   BORDERLESS TRANSPARENT CTA SYSTEM (STRICTLY NO BOXES)
+   ========================================================= */
+.ugc-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0.5rem 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: normal;
+  transition: color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .ugc-cta {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+.ugc-cta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.375rem;
+  height: 2px;
+  background-color: currentColor;
+  transform-origin: left center;
+  transform: scaleX(0.38);
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ugc-cta:hover::after,
+.ugc-cta:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.ugc-cta .ugc-cta-arrow {
+  display: inline-block;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ugc-cta:hover .ugc-cta-arrow,
+.ugc-cta:focus-visible .ugc-cta-arrow {
+  transform: translateX(6px);
+}
+
+.ugc-cta:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 6px;
+}
+
+/* Light-on-dark hero CTA variant */
+.ugc-cta--light {
+  color: #ffffff;
+}
+.ugc-cta--light:hover,
+.ugc-cta--light:focus-visible {
+  color: var(--color-lime);
+}
+
+/* Dark-on-light CTA variant */
+.ugc-cta--dark {
+  color: var(--color-navy);
+}
+.ugc-cta--dark:hover,
+.ugc-cta--dark:focus-visible {
+  color: var(--color-teal);
+}
+
+/* Teal accent CTA variant */
+.ugc-cta--teal {
+  color: var(--color-teal);
+}
+.ugc-cta--teal:hover,
+.ugc-cta--teal:focus-visible {
+  color: var(--color-navy);
+}
+
+/* Brand Orange accent CTA on dark */
+.ugc-cta--lime {
+  color: var(--color-lime);
+}
+.ugc-cta--lime:hover,
+.ugc-cta--lime:focus-visible {
+  color: #ffffff;
+}
+
+/* =========================================================
+   NAVBAR LINKS — BORDERLESS TYPOGRAPHIC UNDERLINE
+   ========================================================= */
+.ugc-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding: 0.25rem 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+.ugc-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.45rem;
+  height: 2px;
+  background-color: var(--color-teal);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ugc-nav-link:hover::after,
+.ugc-nav-link[aria-current="page"]::after,
+.ugc-nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.ugc-nav-link:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   EDITORIAL HAIRLINES & BORDERLESS FORM INPUTS
+   ========================================================= */
+.ugc-hairline-top {
+  border-top: 1px solid rgba(25, 55, 71, 0.14);
+}
+
+.ugc-hairline-bottom {
+  border-bottom: 1px solid rgba(25, 55, 71, 0.14);
+}
+
+.ugc-hairline-light-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.ugc-hairline-light-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.ugc-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(25, 55, 71, 0.26);
+  border-radius: 0;
+  padding: 0.75rem 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-slate);
+  transition: border-color 180ms ease;
+}
+
+.ugc-input:focus {
+  outline: none;
+  border-bottom-color: var(--color-teal);
+}
+
+.ugc-input::placeholder {
+  color: rgba(65, 75, 80, 0.58);
+}
+
+/* =========================================================
+   IMAGE REVEAL & HOVER ZOOM (COMPOSITOR ONLY)
+   ========================================================= */
+.ugc-image-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.ugc-image-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ugc-image-frame:hover img {
+  transform: scale(1.025);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .ugc-cta::after,
+  .ugc-cta .ugc-cta-arrow,
+  .ugc-nav-link::after,
+  .ugc-image-frame img {
+    transition: none !important;
+  }
+  .ugc-image-frame:hover img {
+    transform: none !important;
+  }
+}
